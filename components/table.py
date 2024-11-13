@@ -1,5 +1,4 @@
 import reflex as rx
-import pandas as pd
 
 class State(rx.State):
     data: list = [
@@ -14,7 +13,7 @@ class State(rx.State):
     columns: list[str] = ["Servicios", "Precios"]
 
 
-def table():
+def table()->rx.Component:
     return rx.data_table(
         data=State.data,
         columns=State.columns,
